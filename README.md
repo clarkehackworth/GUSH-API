@@ -3,6 +3,7 @@
 Use simple HTTP calls to interact with Google Spreadsheets. Insert and query data from standard HTTP requests. Easy to use from scripting languages such as python as an integration point between another system and Google Spreadsheets
 
 ## Instructions
+0. Create a Google Spreadsheet with row headings (typically in the first row) 
 1. From Google Spreadsheet open the script tab (Tools - > Script Editor)
 2. Copy/Paste contents of Code.gs in this repositoty into your opened script editor window 
 3. Update the value of the password parameter at the top of the file. Choose a unique and strong password, this becomes your API key allowing you to interact with the API without being authenticated as a Google user.
