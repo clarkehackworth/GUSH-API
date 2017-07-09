@@ -110,7 +110,7 @@ function doPost(e){ // POST not workin?
   return processData(data);
 }
 
-function getColumnByTitle(columnName,activeSpreadsheet,headerRow){
+function getColumnByTitle(columnName,sheet,headerRow){
 
  var names = sheet.getRange(headerRow, 1, 1, sheet.getLastColumn()).getValues(); 
   for(row in names){  // should only be one given the range above
