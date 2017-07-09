@@ -41,4 +41,5 @@ Output:
 value 1, value 2
 value 3, value 4
 ```
-   
+### Notes
+If you want to use Google's authentication instead of the script's API key password, you can use a script to generate the URL(s) and open browser windows which will ask for user interaction and Google authentication before interacting with the API
