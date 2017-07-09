@@ -19,12 +19,19 @@ Use simple HTTP calls to interact with Google Spreadsheets. Insert and query dat
 
 ## Example Use From Python:
 ### inserting or updating data into the spreadsheet
+```python
 googleAPI = "https://script.google.com/macros/s/<script_id>/exec"
-content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"insert\",\"sheetName\":\"sheetnamevalue\",\"key\":\"columnnamevalue\",\"data\":{\"column1\":\""+urllib.quote_plus(value1)+"\",\"column2\":\""+urllib.quote_plus(value2)+"\"}}").read()
-print content
-### listing data based on search criteria
-googleAPI = "https://script.google.com/macros/s/<script_id>/exec"
-content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"list\",\"sheetName\":\"sheetnamevalue\",\"key\":\"searchcolumn\",\"compare\":\"<contains or equals>\",\"value\":\"searchvalue\",\"data\":{\"columns\":[\"column1\",\"column2\"]}}").read()
-print content
 
+content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"insert\",\"sheetName\":\"sheetnamevalue\",\"key\":\"columnnamevalue\",\"data\":{\"column1\":\""+urllib.quote_plus(value1)+"\",\"column2\":\""+urllib.quote_plus(value2)+"\"}}").read()
+
+print content
+```
+### listing data based on search criteria
+```python
+googleAPI = "https://script.google.com/macros/s/<script_id>/exec"
+
+content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"list\",\"sheetName\":\"sheetnamevalue\",\"key\":\"searchcolumn\",\"compare\":\"<contains or equals>\",\"value\":\"searchvalue\",\"data\":{\"columns\":[\"column1\",\"column2\"]}}").read()
+
+print content
+```
    
