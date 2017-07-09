@@ -16,7 +16,7 @@ Use simple HTTP calls to interact with Google Spreadsheets. Insert and query dat
    
    c. Hit the "Deploy" button in the dialog and follow permissions prompts allowing access
    
-   d. finally take note of your new "Web App URL", and hit the "OK" button
+   d. Finally, take note of your new "Web App URL", and hit the "OK" button
 
 ## Example Use From Python:
 ### inserting or updating data into the spreadsheet
@@ -34,5 +34,11 @@ googleAPI = "https://script.google.com/macros/s/<script_id>/exec"
 content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"list\",\"sheetName\":\"sheetnamevalue\",\"key\":\"searchcolumn\",\"compare\":\"<contains or equals>\",\"value\":\"searchvalue\",\"data\":{\"columns\":[\"column1\",\"column2\"]}}").read()
 
 print content
+```
+Output:
+```
+200
+value 1, value 2
+value 3, value 4
 ```
    
