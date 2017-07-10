@@ -44,4 +44,4 @@ value 3, value 4
 ## Notes
 If you want to use Google's authentication instead of the script's API key password, you can use a script to generate the URL(s) and open browser windows which will ask for user interaction and Google authentication before interacting with the API
 ## Disclaimer
-The API password is designed to be a low level of security. If the data you are using is sensitive, please considered the security architecture and the implications thereof.
+The API password is designed to be a minimun level of security. If the data you are using is sensitive, please considered the security architecture and the implications thereof.
