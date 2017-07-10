@@ -1,6 +1,6 @@
 # GUSH-API
 ## Google Universal Spreadsheet HTTP API
-Use simple HTTP calls to interact with Google Spreadsheets. Insert and query data from standard HTTP requests. Easy to use from scripting languages such as python as an integration point between another systems and your Google spreadsheet.
+Use simple HTTP calls to interact with Google Spreadsheets. Insert, update and query data using standard HTTP requests. Easy to use from scripting languages such as python as an integration point between another systems and your Google spreadsheet.
 
 ## Instructions
 0. Create a Google Spreadsheet with row headings (typically in the first row) 
