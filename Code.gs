@@ -7,6 +7,45 @@ function processData(data) {
     return insertData(data)
   if(data.action == "list")
     return listData(data)
+  if(data.action == "remove")
+    return removeData(data)
+    
+  //sortListSheet()
+}
+
+/*
+usage 
+https://script.google.com/macros/s/<script_id>/exec?data={"password":"passwordvalue","action":"remove","sheetName":"sheetnamevalue","key":"searchcolumn","compare":"<contains or equals>","value":"searchvalue"}}
+*/
+function removeData(data){
+  var sheetName = data.sheetName;
+  var ss = SpreadsheetApp.getActiveSpreadsheet();
+  var sheet = ss.getSheetByName(sheetName);
+  var headerRow = data.headerRow ? data.headerRow : 1;
+  var keyCol = getColumnByTitle(data.key, sheet,headerRow);
+  var compare = data.compare;
+  var value = data.value;
+  
+  var output = "200\n";
+  var keyValues = sheet.getRange(headerRow+1, keyCol, sheet.getLastRow(), 1).getValues(); //read key values
+  for(i in keyValues){
+    //Logger.log("checking "+ keyValues[i]+" against "+value +" using "+ compare);
+    if(compare == "contains"){
+      if(String(keyValues[i]).indexOf(value)>-1){
+         //Logger.log("found contains value "+value);
+         sheet.deleteRow(headerRow + 1 + parseInt(i));
+         output = output+value+"\n";
+      }         
+    } else if (compare == "equals"){       
+      if(String(keyValues[i]) == value){
+         //Logger.log("found equals value "+value);
+         sheet.deleteRow(headerRow + 1 + parseInt(i));
+         output = output+value+"\n";
+      }
+    }
+     
+  }
+  return ContentService.createTextOutput(output);
 }
 
 /*
