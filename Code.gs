@@ -9,8 +9,6 @@ function processData(data) {
     return listData(data)
   if(data.action == "remove")
     return removeData(data)
-    
-  //sortListSheet()
 }
 
 /*
