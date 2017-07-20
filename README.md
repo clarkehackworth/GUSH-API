@@ -41,6 +41,15 @@ Output:
 value 1, value 2
 value 3, value 4
 ```
+### Removing data based on criteria
+```python
+googleAPI = "https://script.google.com/macros/s/<script_id>/exec"
+
+content = urllib2.urlopen(googleAPI+"?data={\"password\":\"passwordvalue\",\"action\":\"remove\",\"sheetName\":\"sheetnamevalue\",\"key\":\"searchcolumn\",\"compare\":\"<contains or equals>\",\"value\":\"deletevalue\"}}").read()
+
+print content
+```
+
 ## Notes
 If you want to use Google's authentication instead of the script's API key password, you can use a script to generate the URL(s) and open browser windows which will ask for user interaction and Google authentication before interacting with the API
 ## Disclaimer
